@@ -8,10 +8,10 @@ function calculateMNQuote(params) {
   const billingOption = params.billingOption === 'quarterly' ? 'quarterly' : 'annual';
 
   const WAGE_LIMIT = 184500; // Social Security wage limit
-  // OR ShelterPoint rate: TBD - using placeholder structure
-  const SHELTERPOINT_RATE = totalEmployees <= 9 ? 0.0045 : 0.0081;
-  // OR State plan rate: TBD - using placeholder structure
-  const STATE_PLAN_RATE = totalEmployees <= 9 ? 0.0045 : 0.009;
+  // OR ShelterPoint rate: 0.54%
+  const SHELTERPOINT_RATE = 0.0054;
+  // OR State plan rate: 0.6%
+  const STATE_PLAN_RATE = 0.006;
 
   // ShelterPoint quote
   const annualTotal = (employeesOverCap * WAGE_LIMIT * SHELTERPOINT_RATE) + (payrollBelowCap * SHELTERPOINT_RATE);
