@@ -149,12 +149,14 @@
     <div id="brokerIdModal" class="modal-overlay" onclick="if(event.target === this) closeBrokerIdModal()">
         <div class="modal-content" onclick="event.stopPropagation()">
             <div class="modal-header">
-                <h3>Enter Your Broker ID</h3>
+                <h3>Login</h3>
             </div>
             <div class="modal-body">
-                <label for="brokerIdInput">Broker ID Number</label>
-                <input type="text" id="brokerIdInput" name="brokerId" placeholder="ex. 123456789">
-                <p class="helper-text">If you do not have a broker ID yet, please visit our broker onboarding page.</p>
+                <label for="usernameInput">Username</label>
+                <input type="text" id="usernameInput" name="username" placeholder="Enter your username" style="margin-bottom: 1rem;">
+                <label for="passwordInput">Password</label>
+                <input type="password" id="passwordInput" name="password" placeholder="Enter your password">
+                <p class="helper-text">If you do not have an account yet, please visit our broker onboarding page.</p>
             </div>
             <div class="modal-actions">
                 <button type="button" class="btn-secondary" onclick="closeBrokerIdModal()">Cancel</button>
@@ -170,7 +172,8 @@
 
         function closeBrokerIdModal() {
             document.getElementById('brokerIdModal').classList.remove('active');
-            document.getElementById('brokerIdInput').value = '';
+            document.getElementById('usernameInput').value = '';
+            document.getElementById('passwordInput').value = '';
         }
 
         function proceedToStateApplications() {

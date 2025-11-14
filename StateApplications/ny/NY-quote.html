@@ -295,34 +295,34 @@
                                 <h3 style="color: var(--primary-color); margin-bottom: 1rem;">DBL Benefits <span class="required">*</span></h3>
                                 <p style="color: var(--text-light); margin-bottom: 1rem;">Select your benefit level for DBL</p>
                                 
-                                <div class="radio-group button-style benefit-grid">
-                                    <div class="radio-item">
-                                        <input type="radio" id="statutory" name="dblBenefits" value="statutory" required>
+                                <div class="checkbox-group" style="justify-content: center; display: grid; grid-template-columns: repeat(3, auto); gap: 0.75rem;">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="statutory" name="dblBenefits" value="statutory" onchange="handleDBLSelection(this)">
                                         <label for="statutory">1x</label>
                                         <div class="help-text" style="text-align: center; margin-top: 0.25rem;">Maximum Benefit: $170/week</div>
                                     </div>
-                                    <div class="radio-item">
-                                        <input type="radio" id="enriched1.5x" name="dblBenefits" value="enriched1.5x">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="enriched1.5x" name="dblBenefits" value="enriched1.5x" onchange="handleDBLSelection(this)">
                                         <label for="enriched1.5x">1.5x</label>
                                         <div class="help-text" style="text-align: center; margin-top: 0.25rem;">Maximum Benefit: $255/week</div>
                                     </div>
-                                    <div class="radio-item">
-                                        <input type="radio" id="enriched2x" name="dblBenefits" value="enriched2x">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="enriched2x" name="dblBenefits" value="enriched2x" onchange="handleDBLSelection(this)">
                                         <label for="enriched2x">2x</label>
                                         <div class="help-text" style="text-align: center; margin-top: 0.25rem;">Maximum Benefit: $340/week</div>
                                     </div>
-                                    <div class="radio-item">
-                                        <input type="radio" id="enriched3x" name="dblBenefits" value="enriched3x">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="enriched3x" name="dblBenefits" value="enriched3x" onchange="handleDBLSelection(this)">
                                         <label for="enriched3x">3x</label>
                                         <div class="help-text" style="text-align: center; margin-top: 0.25rem;">Maximum Benefit: $510/week</div>
                                     </div>
-                                    <div class="radio-item">
-                                        <input type="radio" id="enriched4x" name="dblBenefits" value="enriched4x">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="enriched4x" name="dblBenefits" value="enriched4x" onchange="handleDBLSelection(this)">
                                         <label for="enriched4x">4x</label>
                                         <div class="help-text" style="text-align: center; margin-top: 0.25rem;">Maximum Benefit: $680/week</div>
                                     </div>
-                                    <div class="radio-item">
-                                        <input type="radio" id="enriched5x" name="dblBenefits" value="enriched5x">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="enriched5x" name="dblBenefits" value="enriched5x" onchange="handleDBLSelection(this)">
                                         <label for="enriched5x">5x</label>
                                         <div class="help-text" style="text-align: center; margin-top: 0.25rem;">Maximum Benefit: $850/week</div>
                                     </div>
@@ -354,13 +354,13 @@
                                         <div class="help-text" style="margin: 0.25rem 0 0.6rem 0;">
                                             Add Accidental Death & Dismemberment coverage with a $50k or $100k benefit
                                         </div>
-                                        <div class="radio-group button-style">
-                                            <div class="radio-item">
-                                                <input type="radio" id="add50k" name="addBenefit" value="50000">
+                                        <div class="checkbox-group">
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="add50k" name="addBenefit" value="50000" onchange="handleADnDSelection(this)">
                                                 <label for="add50k">$50k</label>
                                             </div>
-                                            <div class="radio-item">
-                                                <input type="radio" id="add100k" name="addBenefit" value="100000">
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="add100k" name="addBenefit" value="100000" onchange="handleADnDSelection(this)">
                                                 <label for="add100k">$100k</label>
                                             </div>
                                         </div>
@@ -378,16 +378,19 @@
                                             <input type="checkbox" id="termLife15k" name="termLife15k">
                                             <label for="termLife15k">Term Life $15k</label>
                                             <div class="help-text">$15,000 term life insurance coverage</div>
+                                            <div class="help-text" style="font-weight: 600; color: var(--primary-color); margin-top: 0.25rem;">$36/year per person</div>
                                         </div>
                                         <div class="checkbox-item wide-button">
                                             <input type="checkbox" id="eap" name="eap">
                                             <label for="eap">EAP</label>
                                             <div class="help-text">24/7 access to TELUS Health EAP services</div>
+                                            <div class="help-text" style="font-weight: 600; color: var(--primary-color); margin-top: 0.25rem;">$36/year per person</div>
                                         </div>
                                         <div class="checkbox-item wide-button">
                                             <input type="checkbox" id="nurseHelpline" name="nurseHelpline">
                                             <label for="nurseHelpline">Nurse Helpline</label>
                                             <div class="help-text">24/7 access to registered nurses</div>
+                                            <div class="help-text" style="font-weight: 600; color: var(--primary-color); margin-top: 0.25rem;">$54/year per person</div>
                                         </div>
                                     </div>
                                 </div>
@@ -398,16 +401,16 @@
                                 <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Billing Options <span class="required">*</span></h3>
                                 <p style="color: var(--text-light); margin-bottom: 1rem;">Make one selection from the options below</p>
                                 
-                                <div class="radio-group button-style billing-options">
-                                    <div class="radio-item">
-                                        <input type="radio" id="annualBilling" name="billingOption" value="annual" onchange="toggleBillingFields()" required>
-                                        <label for="annualBilling">Annually</label>
-                                        <div class="help-text">Minimum DBL Premium is $125.00 annually</div>
+                                <div class="checkbox-group" style="display: grid; grid-template-columns: repeat(2, auto); justify-content: center; justify-items: center; gap: 10rem;">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="annualBilling" name="billingOption" value="annual" onchange="handleBillingSelection(this)">
+                                        <label for="annualBilling" style="width: 200px;">Annually</label>
+                                        <div class="help-text" style="text-align: center;">Minimum DBL Premium is $125.00 annually</div>
                                     </div>
-                                    <div class="radio-item">
-                                        <input type="radio" id="quarterlyBilling" name="billingOption" value="quarterly" onchange="toggleBillingFields()">
-                                        <label for="quarterlyBilling">Quarterly</label>
-                                        <div class="help-text">Minimum $35.00 per quarter. A quarterly installment fee may apply. 11 or more lives required.</div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="quarterlyBilling" name="billingOption" value="quarterly" onchange="handleBillingSelection(this)">
+                                        <label for="quarterlyBilling" style="width: 200px;">Quarterly</label>
+                                        <div class="help-text" style="text-align: center;">Minimum $35.00 per quarter. A quarterly installment fee may apply. 11 or more lives required.</div>
                                     </div>
                                 </div>
 
@@ -525,6 +528,40 @@
             const males = parseFloat(document.getElementById('payrollMales').value) || 0;
             const females = parseFloat(document.getElementById('payrollFemales').value) || 0;
             document.getElementById('totalPayroll').value = (males + females).toFixed(2);
+            updateQuote();
+        }
+
+        // Handle DBL Benefits selection - only one can be selected at a time
+        function handleDBLSelection(selectedCheckbox) {
+            const allDBL = document.querySelectorAll('input[name="dblBenefits"]');
+            allDBL.forEach(cb => {
+                if (cb !== selectedCheckbox) {
+                    cb.checked = false;
+                }
+            });
+            updateQuote();
+        }
+
+        // Handle AD&D Benefit selection - only one can be selected at a time
+        function handleADnDSelection(selectedCheckbox) {
+            const allADnD = document.querySelectorAll('input[name="addBenefit"]');
+            allADnD.forEach(cb => {
+                if (cb !== selectedCheckbox) {
+                    cb.checked = false;
+                }
+            });
+            updateQuote();
+        }
+
+        // Handle Billing Options selection - only one can be selected at a time
+        function handleBillingSelection(selectedCheckbox) {
+            const allBilling = document.querySelectorAll('input[name="billingOption"]');
+            allBilling.forEach(cb => {
+                if (cb !== selectedCheckbox) {
+                    cb.checked = false;
+                }
+            });
+            toggleBillingFields();
             updateQuote();
         }
 

@@ -21,10 +21,9 @@
                 <div style="background: var(--bg-light); padding: 2rem; border-radius: 12px; margin: 2rem auto; max-width: 720px;">
                     <p>We have recorded your information. A confirmation has been generated for your records.</p>
                     <p style="margin-top: 1rem; font-weight: 500;">We are processing your application and you will receive a response through e-mail in 24 hours.</p>
-                    <p style="margin-top: 0.5rem;">You can return to the applications hub or start a new application below.</p>
+                    <p style="margin-top: 0.5rem;">You can start a new application below.</p>
                     <div class="button-group" style="justify-content: center; margin-top: 1rem;">
-                        <button type="button" class="btn-secondary" onclick="window.location.href='../index.html'" onmouseover="this.style.background='white'; this.style.borderColor='#00A4E4'; this.style.transform='translateY(-2px)'; this.style.transition='all 0.3s ease'" onmouseout="this.style.background='#F7F9FA'; this.style.borderColor='#E0E0E0'; this.style.transform='translateY(0)'">← Back to Applications</button>
-                        <button type="button" class="btn-primary" onclick="startOver()">Start New Application →</button>
+                        <button type="button" class="btn-primary" onclick="window.location.href='../index.html'">Start New Application →</button>
                     </div>
                 </div>
 
@@ -37,7 +36,6 @@
         <footer><p>© 2025 ShelterPoint Life Insurance Company</p></footer>
     </div>
     <script>
-        function startOver(){ sessionStorage.removeItem('mnApplicationData'); sessionStorage.removeItem('mnQuoteData'); window.location.href='MN-quote.html'; }
     </script>
 </body>
 </html>
